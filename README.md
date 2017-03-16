@@ -15,6 +15,7 @@ result.then((result) => {
 ```
 
 ## Table of Contents
+
  - [Installation] (#installation)
  - [setURL] (#setURL)
  - [getURL] (#getURL)
@@ -55,7 +56,7 @@ Returns a Promise
 
 Note: the `data` parameter must be a jsonobject in the format expected by openscoring (see [openscoring GitHub page](http://github.com/openscoring/openscoring) for full details)
 
-### Example single data set
+#### Example: Single data set
 ```js
 openscoring.setURL("http://localhost:8080/openscoring");
 var data = {
@@ -76,7 +77,7 @@ result.then((result) => {
 
 For batch mode, the data looks for a key called "requests" per the openscoring documentation:
 
-### Example batch
+#### Example: Batch data set
 ```js
 openscoring.setURL("http://localhost:8080/openscoring");
 var data = {
@@ -89,7 +90,6 @@ var data = {
 			"item2": 1,
 			"item3": 1,
 			}
-			
 		},
 		{
 		"id": "record-002",
@@ -123,7 +123,7 @@ openscoring.metric(model)
 openscoring.metric()
 ```
 
-### Example
+#### Example
 ```js
 openscoring.setURL("http://localhost:8080/openscoring");
 var result = openscoring.metric();
@@ -139,7 +139,7 @@ result.then((result) => {
 Retrieves the PMML for a given model. Requires administrative rights on the openscoring server. See openscoring documentation for details.
 
 
-### Example
+#### Example
 ```js
 openscoring.setURL("http://localhost:8080/openscoring");
 var result = openscoring.pmml("model");
