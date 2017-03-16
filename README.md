@@ -16,13 +16,13 @@ result.then((result) => {
 
 ## Table of Contents
 
- - [Installation] (#installation)
- - [setURL] (#setURL)
- - [getURL] (#getURL)
- - [Summary] (#summary)
- - [Evaluate] (#evaluate)
- - [Metric] (#metric)
- - [PMML] (#pmml)
+ - [Installation](#installation)
+ - [setURL](#setURL)
+ - [getURL](#getURL)
+ - [Summary](#summary)
+ - [Evaluate](#evaluate)
+ - [Metric](#metric)
+ - [PMML](#pmml)
 
 Note: Plan to add the ability to deploy and delete models at some point. CSV evaluate support not currently implemented.
 
