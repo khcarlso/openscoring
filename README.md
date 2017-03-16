@@ -26,7 +26,7 @@ result.then((result) => {
 
 Note: Plan to add the ability to deploy and delete models at some point. CSV evaluate support not currently implemented.
 
-##Installation
+## Installation
 
 ```
 npm install --save openscoring
@@ -49,7 +49,7 @@ openscoring.getURL("http://localhost:8080/openscoring");
 ```
 [back to top](#table-of-contents)
 
-## Evaluate
+## evaluate
 This method evaluates a single or batch set of data against a given data model, depending on the structure of the data that is passed.
 
 Returns a Promise
@@ -112,7 +112,7 @@ result.then((result) => {
 
 [back to top](#table-of-contents)
 
-## Metric
+## metric
 Retrieves model metrics for one (if model name supplied) or all (if no argument) deployed models.
 
 This action equires administrative rights on the openscoring server. See openscoring documentation for details.
@@ -135,7 +135,7 @@ result.then((result) => {
 ```
 [back to top](#table-of-contents)
 
-## PMML
+## pmml
 Retrieves the PMML for a given model. Requires administrative rights on the openscoring server. See openscoring documentation for details.
 
 
