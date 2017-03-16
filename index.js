@@ -59,6 +59,7 @@ module.exports = {
 			if (!OSServerURL) {
 				reject("Null or Empty OpenScoring server URL");
 			}
+
 			if (!model) {
 				reject("Must specify a model when calling evaluate");
 			}

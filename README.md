@@ -32,7 +32,6 @@ Note: Plan to add the ability to deploy and delete models at some point. CSV eva
 npm install --save openscoring
 ```
 
-
 ## setURL
 This method sets the URL for the OpenScoring server. This should include the full path of the default URL, for example:
 
