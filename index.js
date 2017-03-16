@@ -1,12 +1,11 @@
-/**
- * 
- */
+'use strict'
+
 var OSServerURL = null;
 var request = require('request');
 
 module.exports = {
 	summary: function (model) {
-		var promise = new Promise((resolve, reject) => {
+		return new Promise((resolve, reject) => {
 			// path = /model
 			if (!OSServerURL) {
 				reject("Null or Empty OpenScoring server URL");
@@ -27,13 +26,11 @@ module.exports = {
 					resolve(body);
 				}
 			});
-
 		});
-		return promise;
 	},
 
 	pmml: function (model) {
-		var promise = new Promise((resolve, reject) => {
+		return new Promise((resolve, reject) => {
 			// path = /model
 			if (!OSServerURL) {
 				reject("Null or Empty OpenScoring server URL");
@@ -54,13 +51,11 @@ module.exports = {
 					resolve(body);
 				}
 			});
-
 		});
-		return promise;
 	},
 
 	evaluate: function (model, data) {
-		var promise = new Promise((resolve, reject) => {
+		return new Promise((resolve, reject) => {
 			if (!OSServerURL) {
 				reject("Null or Empty OpenScoring server URL");
 			}
@@ -85,14 +80,11 @@ module.exports = {
 					resolve(body);
 				}
 			});
-
-
 		});
-		return promise;
 	},
 
 	metric: function (model) {
-		var promise = new Promise((resolve, reject) => {
+		return new Promise((resolve, reject) => {
 			// path = /model
 			if (!OSServerURL) {
 				reject("Null or Empty OpenScoring server URL");
@@ -114,9 +106,7 @@ module.exports = {
 					resolve(body);
 				}
 			});
-
 		});
-		return promise;
 	},
 
 	setURL: function (url) {

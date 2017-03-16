@@ -1,8 +1,8 @@
 # openscoring - Simple API for openscoring REST interface
 
-openscoring is designed to be a simple way to make calls to an openscoring server. It is dependent on the request npm module which supports HTTP and HTTPS.
+openscoring is designed to be a simple way to make calls to an openscoring server. For making the `XMLHttpRequest` to openscoring, this module uses the [request](https://www.npmjs.com/package/request) module which supports both HTTP and HTTPS.
 
-All methods return a JavaScript Promise and should be used as follows:
+All methods return a `Promise` and should be used as follows:
 
 ```js
 var openscoring = require('openscoring');
@@ -75,7 +75,7 @@ result.then((result) => {
 });
 ```
 
-For batch mode, the data looks for a key called "requests" per the openscoring documentation:
+For batch mode, the data looks for a key called `requests` per the openscoring documentation:
 
 #### Example: Batch data set
 ```js
@@ -113,7 +113,7 @@ result.then((result) => {
 [back to top](#table-of-contents)
 
 ## metric
-Retrieves model metrics for one (if model name supplied) or all (if no argument) deployed models.
+Retrieves model metrics for one or all deployed models depending on whether the `model` parameter is passed.
 
 This action equires administrative rights on the openscoring server. See openscoring documentation for details.
 
