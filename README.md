@@ -44,7 +44,7 @@ openscoring.setURL("http://localhost:8080/openscoring");
 Returns the current URL endpoint for the OpenScoring server.
 
 ```js
-openscoring.getURL("http://localhost:8080/openscoring");
+openscoring.getURL();
 ```
 [back to top](#table-of-contents)
 
