@@ -1,7 +1,7 @@
 {
 	"name": "openscoring",
-	"version": "0.1.1",
-	"description": "npm module for openscoring REST API",
+	"version": "0.1.2",
+	"description": "npm module wrapper for openscoring REST API",
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
@@ -18,9 +18,9 @@
 	"author": "Kevin Carlson <http://carlsononcommerce.com>",
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/khcarlso/openscoring-npm/issues"
+		"url": "https://github.com/khcarlso/openscoring/issues"
 	},
-	"homepage": "https://github.com/khcarlso/openscoring-npm#readme",
+	"homepage": "https://github.com/khcarlso/openscoring#readme",
 	"dependencies": {
 		"request": "^2.81.0"
 	}

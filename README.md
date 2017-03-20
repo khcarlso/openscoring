@@ -23,8 +23,10 @@ result.then((result) => {
  - [Evaluate](#evaluate)
  - [Metric](#metric)
  - [PMML](#pmml)
+ - [Deploy](#deploy)
+ - [Delete](#delete)
 
-Note: Plan to add the ability to deploy and delete models at some point. CSV evaluate support not currently implemented.
+CSV evaluate support not currently implemented.
 
 ## Installation
 
@@ -149,3 +151,32 @@ result.then((result) => {
 });
 ```
 [back to top](#table-of-contents)
+
+## deploy
+Deploys a new model. Requires administrative rights on the openscoring server. See openscoring documentation for details.
+
+#### Example
+```js
+openscoring.setURL("http://localhost:8080/openscoring");
+var pmmlText = "<PMML> ... </PMML>"
+var result = openscoring.deploy("newmodel", pmmlText);
+result.then((result) => {
+	console.log(result);
+}).catch((error) => {
+	console.warn(error);
+});
+```
+
+## delete
+Deploys a new model. Requires administrative rights on the openscoring server. See openscoring documentation for details.
+
+#### Example
+```js
+openscoring.setURL("http://localhost:8080/openscoring");
+var result = openscoring.delete("model");
+result.then((result) => {
+	console.log(result);
+}).catch((error) => {
+	console.warn(error);
+});
+```

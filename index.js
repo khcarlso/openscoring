@@ -86,7 +86,7 @@ module.exports = {
 
 	metric: function (model) {
 		return new Promise((resolve, reject) => {
-			// path = /model
+
 			if (!OSServerURL) {
 				reject("Null or Empty OpenScoring server URL");
 			}
@@ -98,7 +98,9 @@ module.exports = {
 			var options = {
 				method: "GET",
 				uri: endpoint,
-				json: true
+				headers: {
+					"Content-type": "text/xml"
+				}
 			};
 			request(options, (err, response, body) => {
 				if (err) {
@@ -107,6 +109,63 @@ module.exports = {
 					resolve(body);
 				}
 			});
+		});
+	},
+
+	deploy: function (model, pmmlText) {
+		return new Promise((resolve, reject) => {
+			if (!OSServerURL) {
+				reject("Null or Empty OpenScoring server URL");
+			}
+
+			if (!model) {
+				reject("Model name required for deploy.")
+			} else {
+				var endpoint = `${OSServerURL}/model/${model}`;
+
+				var options = {
+					method: "PUT",
+					uri: endpoint,
+					body: pmmlText
+				}
+
+				request(options, (err, response, body) => {
+					if (err) {
+						reject(err);
+					} else {
+						resolve(body);
+					}
+				});
+			}
+
+		});
+	},
+
+	delete: function (model) {
+		return new Promise((resolve, reject) => {
+			if (!OSServerURL) {
+				reject("Null or Empty OpenScoring server URL");
+			}
+
+			if (!model) {
+				reject("Model name required for deploy.")
+			} else {
+				var endpoint = `${OSServerURL}/model/${model}`;
+
+				var options = {
+					method: "DELETE",
+					uri: endpoint
+				}
+
+				request(options, (err, response, body) => {
+					if (err) {
+						reject(err);
+					} else {
+						resolve(body);
+					}
+				});
+			}
+
 		});
 	},
 
@@ -121,7 +180,4 @@ module.exports = {
 		return OSServerURL;
 	}
 }
-
-
-
 
