@@ -1,6 +1,6 @@
 {
 	"name": "openscoring",
-	"version": "0.1.2",
+	"version": "1.0.0",
 	"description": "npm module wrapper for openscoring REST API",
 	"main": "index.js",
 	"scripts": {

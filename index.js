@@ -84,6 +84,42 @@ module.exports = {
 		});
 	},
 
+	evaluateCSV(model, data) {
+		return new Promise((resolve, reject) => {
+			if (!OSServerURL) {
+				reject("Null or Empty OpenScoring server URL");
+			}
+
+			if (!model) {
+				reject("Must specify a model when calling evaluateCSV");
+			}
+
+			if (!data) {
+				reject("Must include data parameter when calling evaluateCSV");
+			}
+
+			var endpoint = `${OSServerURL}/model/${model}/csv`;
+			var options = {
+				method: "POST",
+				uri: endpoint,
+				body: data,
+				headers: {
+					"Content-type": "text/plain"
+				}
+			};
+			request(options, (err, response, body) => {
+				if (err) {
+					console.log(err);
+					console.log(response);
+					console.log(body);
+					reject(err);
+				} else {
+					resolve(body);
+				}
+			});
+		});
+	},
+
 	metric: function (model) {
 		return new Promise((resolve, reject) => {
 
@@ -168,6 +204,7 @@ module.exports = {
 
 		});
 	},
+
 
 	setURL: function (url) {
 		if (url[url.length - 1] === '/') {
