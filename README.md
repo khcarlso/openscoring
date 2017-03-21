@@ -1,6 +1,6 @@
 # openscoring - Simple API for openscoring REST interface
 
-openscoring is designed to be a simple way to make calls to an openscoring server. For making the `XMLHttpRequest` to openscoring, this module uses the [request](https://www.npmjs.com/package/request) module which supports both HTTP and HTTPS.
+This openscoring npm module is designed to be a simple way to make calls to an openscoring server. For making the `XMLHttpRequest` to openscoring, this module uses the [request](https://www.npmjs.com/package/request) module which supports both HTTP and HTTPS.
 
 All methods return a `Promise` and should be used as follows:
 
@@ -21,12 +21,12 @@ result.then((result) => {
  - [getURL](#getURL)
  - [Summary](#summary)
  - [Evaluate](#evaluate)
+ - [EvaluateCSV](#evaluateCSV)
  - [Metric](#metric)
  - [PMML](#pmml)
  - [Deploy](#deploy)
  - [Delete](#delete)
 
-CSV evaluate support not currently implemented.
 
 ## Installation
 
@@ -113,6 +113,29 @@ result.then((result) => {
 
 [back to top](#table-of-contents)
 
+## evaluateCSV
+Evaluates a model based on data in CSV format
+
+#### Example
+```js
+openscoring.setURL("http://localhost:8080/openscoring");
+var data = `
+Id,param1,param2,param3
+rec-01,1.0,1.1,1.4
+rec-02,1.5,1.7,1.9
+rec-03,4.1,2.6,6.4
+`;
+
+var result = openscoring.evaluate("model", data);
+result.then((result) => {
+	console.log(result);
+}).catch((error) => {
+	console.warn(error);
+});
+```
+
+[back to top](#table-of-contents)
+
 ## metric
 Retrieves model metrics for one or all deployed models depending on whether the `model` parameter is passed.
 
@@ -166,6 +189,7 @@ result.then((result) => {
 	console.warn(error);
 });
 ```
+[back to top](#table-of-contents)
 
 ## delete
 Deploys a new model. Requires administrative rights on the openscoring server. See openscoring documentation for details.
@@ -180,3 +204,5 @@ result.then((result) => {
 	console.warn(error);
 });
 ```
+
+[back to top](#table-of-contents)
