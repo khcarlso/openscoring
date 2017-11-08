@@ -126,7 +126,7 @@ rec-02,1.5,1.7,1.9
 rec-03,4.1,2.6,6.4
 `;
 
-var result = openscoring.evaluate("model", data);
+var result = openscoring.evaluateCSV("model", data);
 result.then((result) => {
 	console.log(result);
 }).catch((error) => {
